@@ -1,0 +1,30 @@
+﻿@* @{
+    ViewData["Title"] = "Shops Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Shops Page</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> *@
+@model List<MyMvcApp.Models.Shop>
+
+<h1>Shop List</h1>
+
+<a href="/Shop/Create">Create New Shop</a>
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Location</th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Name</td>
+        <td>@item.Location</td>
+    </tr>
+}
+</table>

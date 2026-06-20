@@ -1,0 +1,17 @@
+@model MyMvcApp.Models.Shop
+
+<h1>Create Shop</h1>
+
+<form method="post">
+    <div>
+        <label>Name</label>
+        <input asp-for="Name" />
+    </div>
+
+    <div>
+        <label>Location</label>
+        <input asp-for="Location" />
+    </div>
+
+    <button type="submit">Save</button>
+</form>

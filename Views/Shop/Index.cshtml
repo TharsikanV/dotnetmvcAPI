@@ -8,23 +8,70 @@
 </div> *@
 @model List<MyMvcApp.Models.Shop>
 
-<h1>Shop List</h1>
-
-<a href="/Shop/Create" class="underline text-blue-500 hover:text-blue-700">Create New Shop</a>
-
-<table border="1">
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Location</th>
-    </tr>
-
-@foreach (var item in Model)
-{
-    <tr>
-        <td>@item.Id</td>
-        <td>@item.Name</td>
-        <td>@item.Location</td>
-    </tr>
+@{
+    ViewData["Title"] = "Shops";
 }
-</table>
+@if (!Model.Any())
+{
+    <div class="bg-white rounded-lg shadow p-8 text-center">
+        <p class="text-gray-500">No shops found.</p>
+    </div>
+}
+else
+{
+    <div class="max-w-6xl mx-auto px-6 py-8">
+
+        <div class="flex items-center justify-between mb-6">
+            <h1 class="text-3xl font-bold text-slate-900">
+                Shop List
+            </h1>
+
+            <a asp-controller="Shop" asp-action="Create"
+               class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                Create New Shop
+            </a>
+        </div>
+
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <table class="w-full">
+                <thead class="bg-slate-100">
+                    <tr>
+                        <th class="px-6 py-3 text-left font-semibold">Id</th>
+                        <th class="px-6 py-3 text-left font-semibold">Name</th>
+                        <th class="px-6 py-3 text-left font-semibold">Location</th>
+                        <th class="px-6 py-3 text-left font-semibold">Category</th>
+                        <th class="px-6 py-3 text-left font-semibold">Manager Name</th>
+                        <th class="px-6 py-3 text-left font-semibold">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="border-t hover:bg-slate-50">
+                            <td class="px-6 py-4">@item.Id</td>
+                            <td class="px-6 py-4">@item.Name</td>
+                            <td class="px-6 py-4">@item.Location</td>
+                            <td class="px-6 py-4">@item.Category</td>
+                            <td class="px-6 py-4">@item.Manager_Name</td>
+                            <td class="px-6 py-4">
+                                 <a asp-controller="Shop" asp-action="Details" asp-route-id="@item.Id"
+                                   class="text-green-600 hover:text-green-800 transition">
+                                    View
+                                </a>
+                                <a asp-controller="Shop" asp-action="Edit" asp-route-id="@item.Id"
+                                   class="text-blue-600 hover:text-blue-800 transition">
+                                    Edit
+                                </a>
+                                <a asp-controller="Shop" asp-action="Delete" asp-route-id="@item.Id"
+                                   class="text-red-600 hover:text-red-800 transition">
+                                    Delete
+                                </a>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+}

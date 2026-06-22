@@ -62,4 +62,14 @@ public class ShopController : Controller
 
         return View(shop);
     }
+    // Get shop details
+    public IActionResult Details(int id)
+    {
+        var shop = _context.Shops.FirstOrDefault(s => s.Id == id);
+        if (shop == null)
+        {
+            return NotFound();
+        }
+        return View(shop);
+    }
 }

@@ -336,3 +336,4 @@ D:\practicalTest\MyMvcApp\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Scripting.
 D:\practicalTest\MyMvcApp\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
 D:\practicalTest\MyMvcApp\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 D:\practicalTest\MyMvcApp\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\practicalTest\MyMvcApp\obj\Debug\net10.0\MyMvcApp.sourcelink.json

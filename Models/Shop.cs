@@ -13,10 +13,10 @@ namespace MyMvcApp.Models
         public string? Category { get; set; }
         [Required (ErrorMessage = "Location is required")]
         public string? Location { get; set; }
-        public string? manager_name { get; set; }
+        public string? Manager_Name { get; set; }
 
-        [MaxLength(200, ErrorMessage = "Description must be at most 200 characters long")]
-        public string? description { get; set; }  
+        [MaxLength(10, ErrorMessage = "Description must be at most 10 characters long")]
+        public string? Description { get; set; }  
         public DateTime CreatedAt { get; set; }
 
         public DateTime UpdatedAt { get; set; }

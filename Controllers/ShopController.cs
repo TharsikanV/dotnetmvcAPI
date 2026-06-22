@@ -52,6 +52,9 @@ public class ShopController : Controller
     {
         if (ModelState.IsValid)
         {
+            shop.CreatedAt = DateTime.UtcNow;
+            shop.UpdatedAt = DateTime.UtcNow;
+
             _context.Shops.Add(shop);
             _context.SaveChanges();
             return RedirectToAction("Index");

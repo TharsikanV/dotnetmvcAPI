@@ -15,7 +15,7 @@ namespace MyMvcApp.Models
         public string? Location { get; set; }
         public string? Manager_Name { get; set; }
 
-        [MaxLength(10, ErrorMessage = "Description must be at most 10 characters long")]
+        [MaxLength(100, ErrorMessage = "Description must be at most 100 characters long")]
         public string? Description { get; set; }  
         public DateTime CreatedAt { get; set; }
 
